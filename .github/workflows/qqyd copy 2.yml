@@ -6,7 +6,7 @@ name: 企鹅阅读二
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/11 * * * *'
+    - cron: '1/11 * * * *'
   watch:
     types: [started]
 
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        COOKIE_QQYD: ${{ secrets.COOKIE_QQYD }}
+        COOKIE_QQYD: ${{ secrets.COOKIE_QQYD2 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
