@@ -26,10 +26,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-          npm install got tough-cookie
+          npm install got download #tough-cookie
       - name: ' 运行 【企鹅阅读】'
         run: |
-          node Scripts/qqyd.js
+          node qqyd.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
