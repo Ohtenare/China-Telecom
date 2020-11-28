@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions 
 
-name: 企鹅阅读
+name: 企鹅阅读7
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/11 * * * *'
+    - cron: '6/11 * * * *'
   watch:
     types: [started]
 
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        COOKIE_QQYD: ${{ secrets.COOKIE_QQYD }}
+        COOKIE_QQYD: ${{ secrets.COOKIE_QQYD7 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
@@ -26,7 +26,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-          npm install got #tough-cookie
+          npm install got download #tough-cookie
       - name: ' 运行 【企鹅阅读】'
         run: |
           node qqyd.js
