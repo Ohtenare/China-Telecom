@@ -6,7 +6,7 @@ name: 企鹅阅读二
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1/11 * * * *'
+    - cron: '5 */11 * * * *'
   watch:
     types: [started]
 
@@ -27,7 +27,7 @@ jobs:
         run: |
           npm install
           npm install got download #tough-cookie
-      - name: ' 运行 【企鹅阅读】'
+      - name: ' 运行 【企鹅阅读二】'
         run: |
           node qqyd.js
         env:
