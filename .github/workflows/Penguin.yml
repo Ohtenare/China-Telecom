@@ -23,6 +23,9 @@ jobs:
         COOKIE_QQYD5: ${{ secrets.COOKIE_QQYD5 }}
         COOKIE_QQYD6: ${{ secrets.COOKIE_QQYD6 }}
         COOKIE_QQYD7: ${{ secrets.COOKIE_QQYD7 }}
+        COOKIE_QQYD8: ${{ secrets.COOKIE_QQYD8 }}
+        COOKIE_QQYD9: ${{ secrets.COOKIE_QQYD9 }}
+        COOKIE_QQYD10: ${{ secrets.COOKIE_QQYD10 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
@@ -74,4 +77,22 @@ jobs:
         run: |
           node Penguin.js
         env:
-           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD7 }}
+           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD5 }}
+      - name: ' 运行 【企鹅阅读八】'
+        if: env.COOKIE_QQYD8
+        run: |
+          node Penguin.js
+        env:
+           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD8 }}
+      - name: ' 运行 【企鹅阅读九】'
+        if: env.COOKIE_QQYD9
+        run: |
+          node Penguin.js
+        env:
+           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD9 }}
+      - name: ' 运行 【企鹅阅读十】'
+        if: env.COOKIE_QQYD10
+        run: |
+          node Penguin.js
+        env:
+           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD10 }}
