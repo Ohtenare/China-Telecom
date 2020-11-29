@@ -26,7 +26,7 @@ jobs:
         COOKIE_QQYD8: ${{ secrets.COOKIE_QQYD8 }}
         COOKIE_QQYD9: ${{ secrets.COOKIE_QQYD9 }}
         COOKIE_QQYD10: ${{ secrets.COOKIE_QQYD10 }}
-        COOKIE_QQYD10: ${{ secrets.COOKIE_QQYD11 }}
+        COOKIE_QQYD11: ${{ secrets.COOKIE_QQYD11 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
