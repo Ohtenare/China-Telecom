@@ -6,7 +6,7 @@ name: 企鹅阅读七
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 */11 * * * *'
+    - cron: '*/11 * * * *'
   watch:
     types: [started]
 
@@ -29,7 +29,7 @@ jobs:
           npm install got download #tough-cookie
       - name: ' 运行 【企鹅阅读七】'
         run: |
-          node qqyd.js
+          node Penguin.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
