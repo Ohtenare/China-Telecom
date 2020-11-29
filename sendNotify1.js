@@ -122,7 +122,7 @@ function BarkNotify(text, desp, params={}) {
   return  new Promise(resolve => {
     if (BARK_PUSH) {
       const options = {
-        url: `${BARK_PUSH}/${encodeURIComponent(text)}/${encodeURIComponent(desp)}?sound=${BARK_SOUND}&${querystring.stringify(params)}`,
+        url: `${BARK_PUSH}/${encodeURIComponent(text.match(/.*?(?=\s?-)/g) && text.match(/.*?(?=\s?-)/g)[0])}/${encodeURIComponent(desp)}?sound=${BARK_SOUND}&${querystring.stringify(params)}`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -158,10 +158,22 @@ function tgBotNotify(text, desp) {
     if (TG_BOT_TOKEN && TG_USER_ID) {
       const options = {
         url: `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,
-        body: `chat_id=${TG_USER_ID}&text=${text}\n\n${desp}`,
+        body: `chat_id=${TG_USER_ID}&text=${text.match(/.*?(?=\s?-)/g) && text.match(/.*?(?=\s?-)/g)[0]}\n\n${desp}&disable_web_page_preview=true`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
+      }
+      if (process.env.TG_PROXY_HOST && process.env.TG_PROXY_PORT) {
+        const tunnel = require("tunnel");
+        const agent = {
+          https: tunnel.httpsOverHttp({
+            proxy: {
+              host: process.env.TG_PROXY_HOST,
+              port: process.env.TG_PROXY_PORT * 1
+            }
+          })
+        }
+        Object.assign(options, { agent })
       }
       $.post(options, (err, resp, data) => {
         try {
@@ -197,7 +209,7 @@ function ddBotNotify(text, desp) {
       json: {
         "msgtype": "text",
         "text": {
-          "content": ` ${text}\n\n${desp}`
+          "content": ` ${text.match(/.*?(?=\s?-)/g) && text.match(/.*?(?=\s?-)/g)[0]}\n\n${desp}`
         }
       },
       headers: {
@@ -269,7 +281,7 @@ function iGotNotify(text, desp, params={}){
       } 
       const options = {
         url: `https://push.hellyw.com/${IGOT_PUSH_KEY.toLowerCase()}`,
-        body: `title=${text}&content=${desp}&${querystring.stringify(params)}`,
+        body: `title=${text.match(/.*?(?=\s?-)/g) && text.match(/.*?(?=\s?-)/g)[0]}&content=${desp}&${querystring.stringify(params)}`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -302,8 +314,6 @@ function iGotNotify(text, desp, params={}){
 
 module.exports = {
   sendNotify,
-  BarkNotify,
-  iGotNotify,
   SCKEY,
   BARK_PUSH,
   TG_BOT_TOKEN,
