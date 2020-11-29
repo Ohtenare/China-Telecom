@@ -42,57 +42,77 @@ jobs:
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD1 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读二】'
         if: env.COOKIE_QQYD2
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD2 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读三】'
         if: env.COOKIE_QQYD3
         run: |
           node Penguin.js
         env:
           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD3 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读四】'
         if: env.COOKIE_QQYD4
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD4 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读五】'
         if: env.COOKIE_QQYD5
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD5 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读六】'
         if: env.COOKIE_QQYD6
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD6 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读七】'
         if: env.COOKIE_QQYD7
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD7 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读八】'
         if: env.COOKIE_QQYD8
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD8 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读九】'
         if: env.COOKIE_QQYD9
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD9 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读十】'
         if: env.COOKIE_QQYD10
         run: |
           node Penguin.js
         env:
            COOKIE_QQYD: ${{ secrets.COOKIE_QQYD10 }}
+           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+           TG_USER_ID: ${{ secrets.TG_USER_ID }}
