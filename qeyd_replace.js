@@ -14,7 +14,7 @@ const Secrets = {
 let Cookies = [];
 
 async function downFile() {
-    let response = await axios.get(Secrets.SyncUrl);
+    //let response = await axios.get(Secrets.SyncUrl);
     let content = response.data;
     await fs.writeFileSync("./temp.js", content, "utf8");
 }
@@ -46,10 +46,10 @@ async function executeOneByOne() {
 
 async function start() {
     console.log(`当前执行时间:${new Date().toString()}`);
-    if (!Secrets.COOKIE_QEYD) {
-        console.log("请填写 COOKIE_QEYD 后在继续");
-        return;
-    }
+    //if (!Secrets.COOKIE_QEYD) {
+   //     console.log("请填写 COOKIE_QEYD 后在继续");
+   //     return;
+   // }
     if (!Secrets.SyncUrl) {
         console.log("请填写 SYNCURL 后在继续");
         return;
