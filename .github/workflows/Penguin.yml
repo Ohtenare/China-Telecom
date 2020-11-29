@@ -58,8 +58,8 @@ jobs:
           node Penguin.js
         env:
           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD3 }}
-           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-           TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
       - name: ' 运行 【企鹅阅读四】'
         if: env.COOKIE_QQYD4
         run: |
