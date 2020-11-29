@@ -1,0 +1,77 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions 
+
+name: 企鹅阅读
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/11 * * * *'
+  watch:
+    types: [started]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD1 }}
+        COOKIE_QQYD2: ${{ secrets.COOKIE_QQYD2 }}
+        COOKIE_QQYD3: ${{ secrets.COOKIE_QQYD3 }}
+        COOKIE_QQYD4: ${{ secrets.COOKIE_QQYD4 }}
+        COOKIE_QQYD5: ${{ secrets.COOKIE_QQYD5 }}
+        COOKIE_QQYD6: ${{ secrets.COOKIE_QQYD6 }}
+        COOKIE_QQYD7: ${{ secrets.COOKIE_QQYD7 }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+          npm install got #tough-cookie
+      - name: ' 运行 【企鹅阅读一】'
+        if: env.COOKIE_QQYD1
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD1 }}
+      - name: ' 运行 【企鹅阅读二】'
+        if: env.COOKIE_QQYD2
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD2 }}
+      - name: ' 运行 【企鹅阅读三】'
+        if: env.COOKIE_QQYD3
+        run: |
+          node qqyd.js
+        env:
+          COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD3 }}
+      - name: ' 运行 【企鹅阅读四】'
+        if: env.COOKIE_QQYD4
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD4 }}
+      - name: ' 运行 【企鹅阅读五】'
+        if: env.COOKIE_QQYD5
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD5 }}
+      - name: ' 运行 【企鹅阅读六】'
+        if: env.COOKIE_QQYD6
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD6 }}
+      - name: ' 运行 【企鹅阅读七】'
+        if: env.COOKIE_QQYD7
+        run: |
+          node qqyd.js
+        env:
+           COOKIE_QQYD1: ${{ secrets.COOKIE_QQYD7 }}
