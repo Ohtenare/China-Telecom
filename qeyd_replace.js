@@ -4,7 +4,7 @@ const axios = require("axios");
 
 // 公共变量
 const Secrets = {
-    //SyncUrl: process.env.SYNCURL, //签到地址,方便随时变动
+    SyncUrl: process.env.SYNCURL, //签到地址,方便随时变动
     PUSH_KEY: process.env.PUSH_KEY, //server酱推送消息
     BARK_PUSH: process.env.BARK_PUSH, //Bark推送
     TG_BOT_TOKEN: process.env.TG_BOT_TOKEN, //TGBot推送Token
@@ -50,10 +50,10 @@ async function start() {
         console.log("请填写 COOKIE_QEYD 后在继续");
         return;
     }
-    //if (!Secrets.SyncUrl) {
-    //    console.log("请填写 SYNCURL 后在继续");
-    //    return;
-    //}
+    if (!Secrets.SyncUrl) {
+        console.log("请填写 SYNCURL 后在继续");
+        return;
+    }
     Cookies = Secrets.COOKIE_QEYD.split("\n");
     console.log(`当前共${Cookies.length}个账号需要执行`);
     // 下载最新代码
