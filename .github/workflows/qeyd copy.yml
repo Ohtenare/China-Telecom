@@ -27,7 +27,7 @@ jobs:
                   node-version: 12.x
             - name: npm install
               run: |
-                  npm install
+                  npm install download tough-cookie
             - name: "运行 【企鹅阅读】"
               run: |
                   node qeyd_replace.js
