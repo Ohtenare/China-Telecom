@@ -28,7 +28,7 @@ jobs:
           npm install
           npm install got #tough-cookie
       - name: ' 运行 【企鹅阅读一】'
-        if: env.COOKIE_QQYD22
+        if: env.COOKIE_QQYD1
         run: |
           node Penguin.js
         env:
