@@ -27,7 +27,8 @@ jobs:
                   node-version: 12.x
             - name: npm install
               run: |
-                  npm install download tough-cookie
+                  npm install
+                  npm install axios
             - name: "运行 【企鹅阅读】"
               run: |
                   node qeyd_replace.js
