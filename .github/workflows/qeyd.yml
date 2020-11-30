@@ -17,7 +17,7 @@ jobs:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
         env:
-            COOKIE_QEYD: ${{ secrets.COOKIE_QQYD }}
+            COOKIE_QEYD: ${{ secrets.COOKIE_QEYD }}
             SYNCURL: https://raw.githubusercontent.com/ziye12/JavaScript/master/qqread.js
         steps:
             - uses: actions/checkout@v1
