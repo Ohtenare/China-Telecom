@@ -14,7 +14,7 @@ const Secrets = {
 let Cookies = [];
 
 async function downFile() {
-    //let response = await axios.get(Secrets.SyncUrl);
+    let response = await axios.get(Secrets.SyncUrl);
     let content = response.data;
     await fs.writeFileSync("./temp.js", content, "utf8");
 }
