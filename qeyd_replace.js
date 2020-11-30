@@ -22,9 +22,9 @@ async function downFile() {
 async function changeFiele(content, cookie) {
     //替换各种信息.
     content = content.replace("$.getdata(qqreadurlKey)", "\"https://mqqapi.reader.qq.com/mqq/user/init\"")
-    content = content.replace("$.getdata(qqreadheaderKey)", JSON.stringify(cookie.split("#")[0]))
-    content = content.replace("$.getdata(qqreadtimeurlKey)", JSON.stringify(cookie.split("#")[1]))
-    content = content.replace("$.getdata(qqreadtimeheaderKey)", JSON.stringify(cookie.split("#")[2]))
+    content = content.replace("$.getdata(qqreadheaderKey)", JSON.stringify(cookie.split("@")[0]))
+    content = content.replace("$.getdata(qqreadtimeurlKey)", JSON.stringify(cookie.split("@")[1]))
+    content = content.replace("$.getdata(qqreadtimeheaderKey)", JSON.stringify(cookie.split("@")[2]))
 
     await fs.writeFileSync( './execute.js', content, 'utf8')
 }
