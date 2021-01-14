@@ -1,13 +1,13 @@
 {
 "id": "ziye.app.sub",
-"name": "ziye 汽车之家极速版订阅",
+"name": "ziye 订阅",
 "author": "@ZIYE",
 "icon": "",
 "repo": "https://github.com/ziye12/QCZJSPEED",
 "apps": [{
 "id": "qczjspeed",
 "name": "汽车之家极速版",
-"keys": ["GetUserInfourl", "GetUserInfoheader", "coinbody", "taskbody", "activitybody",  "Goldcoinbody",  "videobody", "Welfarevideobody", "Welfarebody", "addCoinbody", "addCoin2body", "reportAssbody", "reportAssheader", "cointowalletbody","GetUserInfourl2", "GetUserInfoheader2", "coinbody2", "taskbody2", "activitybody2", "Goldcoinbody2",  "videobody2", "Welfarevideobody2", "Welfarebody2", "addCoinbody2", "addCoin2body2", "reportAssbody2", "reportAssheader2", "cointowalletbody2"],
+"keys": ["GetUserInfourl", "GetUserInfoheader", "coinbody", "taskbody", "activitybody",  "Goldcoinbody",  "videobody", "Welfarevideobody", "Welfarebody", "addCoinbody", "addCoin2body", "reportAssbody", "reportAssheader", "cointowalletbody","GetUserInfourl2", "GetUserInfoheader2", "coinbody2", "taskbody2", "activitybody2", "Goldcoinbody2",  "videobody2", "Welfarevideobody2", "Welfarebody2", "addCoinbody2", "addCoin2body2", "reportAssbody2", "reportAssheader2", "cointowalletbody"],
 "author": "@ziye",
 "settings": [{
 "id": "qczjSuffix",
@@ -24,15 +24,15 @@
 "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
 },
 {
-"id": "qczjIns",
-"name": "获取body",
+"id": "qczjCASH",
+"name": "提现标准",
 "val": "0",
 "type": "number",
-"desc": "0不获取，1获取惊喜福利body，2获取视频body,3获取福利视频body,4获取福利body"
+"desc": "0不提现，可设置0 0.5 2 5 10 20 "
 }
 ],
 "repo": "https://github.com/ziye12/QCZJSPEED/blob/main/Task/qczjspeed.js",
-"icons": ["https://raw.githubusercontent.com/ziye12/QCZJSPEED/main/qczjspeed.jpg", "https://raw.githubusercontent.com/ziye12/QCZJSPEED/main/qczjspeed.jpg"],
+"icons": ["https://raw.githubusercontent.com/Orz-3/task/master/qczj.png", "https://raw.githubusercontent.com/Orz-3/task/master/qczj.png"],
 "script": "https://raw.githubusercontent.com/ziye12/QCZJSPEED/main/Task/qczjspeed.js"
 }]
 }
